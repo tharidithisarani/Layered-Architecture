@@ -1,7 +1,7 @@
 package com.example.layeredarchitecture.dao.Impl;
 
 
-import com.example.layeredarchitecture.dao.Custom.OrderDetailsDAO;
+import com.example.layeredarchitecture.dao.custom.OrderDetailsDAO;
 import com.example.layeredarchitecture.dao.SqlUtil;
 import com.example.layeredarchitecture.model.OrderDetailDTO;
 
@@ -15,6 +15,7 @@ public class OrderDetailsDAOImpl implements OrderDetailsDAO {
         return null;
     }
 
+    @Override
     public boolean add(OrderDetailDTO dto) throws SQLException, ClassNotFoundException {
 //        Connection connection = DBConnection.getDbConnection().getConnection();
 //        PreparedStatement stm = connection.prepareStatement("INSERT INTO OrderDetails (oid, itemCode, unitPrice, qty) VALUES (?,?,?,?)");

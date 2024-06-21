@@ -1,7 +1,5 @@
-package com.example.layeredarchitecture.bo;
+package com.example.layeredarchitecture.bo.custom;
 
-import com.example.layeredarchitecture.dao.Custom.CustomerDAO;
-import com.example.layeredarchitecture.dao.Impl.CustomerDAOImpl;
 import com.example.layeredarchitecture.model.CustomerDTO;
 
 import java.sql.SQLException;

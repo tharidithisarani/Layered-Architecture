@@ -1,4 +1,4 @@
-package com.example.layeredarchitecture.dao.Custom;
+package com.example.layeredarchitecture.dao.custom;
 
 public interface QueryDAO {
     private  void getOrderByCustomerName(){
