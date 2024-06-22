@@ -1,6 +1,6 @@
 package com.example.layeredarchitecture.bo.custom;
 
-import com.example.layeredarchitecture.model.CustomerDTO;
+import com.example.layeredarchitecture.dto.CustomerDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,6 +19,4 @@ public interface CustomerBO extends SuperBO {
 
     public boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
 
-
-    public CustomerDTO search(String id) throws SQLException, ClassNotFoundException;
 }

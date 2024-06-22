@@ -1,9 +1,7 @@
 package com.example.layeredarchitecture.bo.custom;
 
-import com.example.layeredarchitecture.dao.SqlUtil;
-import com.example.layeredarchitecture.model.ItemDTO;
+import com.example.layeredarchitecture.dto.ItemDTO;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -20,6 +18,6 @@ public interface ItemBO extends SuperBO {
 
     public String generateNewCode() throws SQLException, ClassNotFoundException;
 
-    public ItemDTO search(String code) throws SQLException, ClassNotFoundException;
+    //public ItemDTO search(String code) throws SQLException, ClassNotFoundException;
 
 }
