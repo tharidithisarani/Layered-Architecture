@@ -2,6 +2,7 @@ package com.example.layeredarchitecture.bo.custom.impl;
 
 
 import com.example.layeredarchitecture.bo.custom.PurchaseOrderBO;
+import com.example.layeredarchitecture.dao.DAOFactory;
 import com.example.layeredarchitecture.dao.custom.Impl.CustomerDAOImpl;
 import com.example.layeredarchitecture.dao.custom.Impl.ItemDAOImpl;
 import com.example.layeredarchitecture.dao.custom.Impl.OrderDAOImpl;
@@ -28,10 +29,16 @@ import java.util.List;
 
 public class PurchaseOrderBOImpl implements PurchaseOrderBO {
 
-    ItemDAO itemDAO = new ItemDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    OrderDAO orderDAO = new OrderDAOImpl();
-    OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAOImpl();
+//    ItemDAO itemDAO = new ItemDAOImpl();
+//    CustomerDAO customerDAO = new CustomerDAOImpl();
+//    OrderDAO orderDAO = new OrderDAOImpl();
+//    OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAOImpl();
+
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.CUSTOMER);
+    ItemDAO itemDAO = (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.ITEM);
+    OrderDAO orderDAO = (OrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.ORDER);
+    OrderDetailsDAO orderDetailsDAO = (OrderDetailsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.ORDER_DETAIL);
+
 
     @Override
     public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException {
