@@ -2,7 +2,7 @@ package com.example.layeredarchitecture.bo.custom.impl;
 
 import com.example.layeredarchitecture.bo.custom.CustomerBO;
 import com.example.layeredarchitecture.dao.custom.CustomerDAO;
-import com.example.layeredarchitecture.controller.Impl.CustomerDAOImpl;
+import com.example.layeredarchitecture.dao.custom.Impl.CustomerDAOImpl;
 import com.example.layeredarchitecture.model.CustomerDTO;
 
 import java.sql.SQLException;
@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 public class CustomerBOImpl implements CustomerBO {
 
+//    property injection
     CustomerDAO customerDAO = new CustomerDAOImpl();
     @Override
     public ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException {
 //        CustomerDAO customerDAO = new CustomerDAOImpl();
         return customerDAO.getAll();
     }
-
 
     @Override
     public boolean add(CustomerDTO dto) throws SQLException, ClassNotFoundException {

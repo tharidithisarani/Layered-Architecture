@@ -1,4 +1,4 @@
-package com.example.layeredarchitecture.controller.Impl;
+package com.example.layeredarchitecture.dao.custom.Impl;
 
 
 import com.example.layeredarchitecture.dao.custom.OrderDAO;
