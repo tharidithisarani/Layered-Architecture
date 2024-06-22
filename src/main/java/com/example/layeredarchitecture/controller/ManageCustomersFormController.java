@@ -149,7 +149,7 @@ public class ManageCustomersFormController {
                     new Alert(Alert.AlertType.ERROR, id + " already exists").show();
                 }
 
-                customerBO.add(new CustomerDTO(id,name,address));
+                customerBO.addCustomer(new CustomerDTO(id,name,address));
                 tblCustomers.getItems().add(new CustomerTM(id, name, address));
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "Failed to save the customer " + e.getMessage()).show();
@@ -165,7 +165,7 @@ public class ManageCustomersFormController {
                     new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
                 }
                 //Update Customer
-                customerBO.update(new CustomerDTO(id,name,address));
+                customerBO.updateCustomer(new CustomerDTO(id,name,address));
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "Failed to update the customer " + id + e.getMessage()).show();
             } catch (ClassNotFoundException e) {
@@ -183,7 +183,7 @@ public class ManageCustomersFormController {
 
 
     boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
-        return customerBO.exist(id);
+        return customerBO.existCustomer(id);
     }
 
 
@@ -195,7 +195,7 @@ public class ManageCustomersFormController {
                 new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
             }
             //Delete Customer
-            customerBO.delete(id);
+            customerBO.deleteCustomer(id);
 
             tblCustomers.getItems().remove(tblCustomers.getSelectionModel().getSelectedItem());
             tblCustomers.getSelectionModel().clearSelection();
@@ -211,7 +211,7 @@ public class ManageCustomersFormController {
     private String generateNewId() {
         try {
             //Generate New ID
-            return customerBO.generateNewID();
+            return customerBO.generateNewCustomerID();
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to generate a new id " + e.getMessage()).show();
         } catch (ClassNotFoundException e) {

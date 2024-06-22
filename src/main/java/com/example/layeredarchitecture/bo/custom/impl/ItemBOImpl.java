@@ -12,37 +12,37 @@ public class ItemBOImpl implements ItemBO {
 
     ItemDAO itemDAO = new ItemDAOImpl();    //property injectrion
     @Override
-    public ArrayList<ItemDTO> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<ItemDTO> getAllItems() throws SQLException, ClassNotFoundException {
 //        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.getAll();
     }
 
     @Override
-    public boolean delete(String code) throws SQLException, ClassNotFoundException {
+    public boolean deleteItem(String code) throws SQLException, ClassNotFoundException {
 //        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.delete(code);
     }
 
     @Override
-    public boolean add(ItemDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean saveItem(ItemDTO dto) throws SQLException, ClassNotFoundException {
 //        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.add(dto);
     }
 
     @Override
-    public boolean update(ItemDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean updateItem(ItemDTO dto) throws SQLException, ClassNotFoundException {
 //        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.update(dto);
     }
 
     @Override
-    public boolean exist(String code) throws SQLException, ClassNotFoundException {
+    public boolean existItem(String code) throws SQLException, ClassNotFoundException {
 //        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.exist(code);
     }
 
     @Override
-    public String generateNewID() throws SQLException, ClassNotFoundException {
+    public String generateNewCode() throws SQLException, ClassNotFoundException {
 //        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.generateNewID();
     }
